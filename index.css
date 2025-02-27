@@ -4,6 +4,10 @@ body {
     max-width: 1536px;
 }
 
+.final-wrp {
+    max-width: 1536px;
+}
+
 @media screen and (max-width: 768px) {
     header {
         all: inherit !important;
@@ -775,6 +779,7 @@ ol {
     justify-content: space-between;
     align-items: center;
 }
+
 
 
 
