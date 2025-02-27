@@ -1,26 +1,111 @@
-@media screen and (max-width: 768px) {
-    .header-top {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-        width: 100%;
-        gap: 120px;
-        row-gap: 120px;
-        column-gap: 120px;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 1536px;
 }
+
+@media screen and (max-width: 768px) {
+    header {
+        all: inherit !important;
+        width: 100% !important;
+        height: 167px !important;
+        display: grid;
+    }
+
+    .wrsh-none {
+        display: block !important;
+        height: 35px !important;
+        width: auto !important;
+        background-color: #F06292 !important;
+        justify-content: center !important;
+        color: white;
+        padding-left: 36%;
+
+    }
+
+    .wrsh-none h4 {
+        padding-top: 2%;
+    }
+
+    .header-top {
+        all: inherit;
+        flex-direction: column;
+        width: 100% !important;
+        flex-wrap: wrap;
+        height: 160px !important;
+        /* Stack elements vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+        background-color: #40C8F4;
+    }
+
+    .logo,
+    .top-nav {
+        flex-basis: auto;
+        /* Force logo and top-nav to take full width */
+        text-align: center;
+        /* Align text to the left */
+    }
+
+    .search-videos {
+        order: 2;
+        width: 93% !important;
+        height: 56%;
+        /* Move search-videos to the bottom */
+        /* margin-top: 10px; */
+        /* Add spacing above the search bar */
+    }
+
+    .top-nav {
+        order: 2;
+        margin-bottom: 8%;
+        margin-left: -20%;
+        width: 15% !important;
+        color: white;
+        /* Move top-nav below the logo */
+        /* margin-top: 10px; */
+        /* Add spacing between logo and top-nav */
+    }
+
+    .logo {
+        order: 1;
+        width: 76% !important;
+        text-align: left;
+        /* Ensure logo stays at the top */
+    }
+
+
+    /* .hamburger {
+        all: initial;
+        display: block !important;
+        justify-content: left;
+    } */
+
+    /* Ensure the main-nav is hidden on mobile */
+    .main-nav {
+        display: none;
+    }
+
+
+
+
+}
+
 
 header {
     display: grid;
     grid-template-rows: auto auto;
     background: linear-gradient(to right, #04ABE1, #42CCF6);
     width: 100%;
-    height: 224px;
+    height: 179px;
     padding: 20px 0;
     color: white;
     font-family: 'Work Sans';
+    margin-top: -1.1%;
+}
 
+.wrsh-none {
+    display: none;
 }
 
 .header-top,
@@ -32,6 +117,16 @@ header {
     height: 56px;
     margin: 0 auto;
 
+}
+
+.header-bottom {
+    margin-bottom: 1%;
+}
+
+.hamburger {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 
@@ -144,6 +239,32 @@ header {
     font-weight: bold;
 }
 
+.social-media:hover {
+    animation: wobble 2s ease;
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(5deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    80% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 /* banner  */
 
 .hero-banner {
@@ -190,7 +311,7 @@ ol {
 
 .banner-carousel #heroGlideTrack {
     width: 85%;
-    height: 462px;
+    height: 600px;
     margin: 0 auto;
 
 }
@@ -236,137 +357,127 @@ ol {
     top: 190%;
 }
 
+/* Media Query for Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .hero-banner {
+        height: 300px;
+        /* Reduce height for mobile */
+        margin-top: 5%;
+        /* Adjust margin for better spacing */
+        background-size: cover, cover;
+        /* Adjust background size */
+        background-position: center;
+        /* Center the background images */
+    }
 
-
-/* best sellers  */
-
-@media (max-width: 768px) {
-    .best-sellers {
-        background-color: #F466AF;
-        padding: 20px 10px;
-        margin-bottom: 2%;
+    .banner-carousel {
         width: 100%;
+        /* Full width for mobile */
+        height: auto;
+        /* Auto height to fit content */
     }
 
-    .best-sellers-h1 {
-        font-family: 'Work Sans';
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 38px;
-        color: #EC007A;
-        text-align: center;
-        margin: 20px 0;
+    #heroGlide .glide {
+        height: 300px !important;
+        /* Reduce height for mobile */
+        margin-bottom: 5%;
+        /* Adjust margin for better spacing */
+    }
+
+    .banner-carousel #heroGlideTrack {
         width: 100%;
+        /* Full width for mobile */
+        height: auto;
+        /* Auto height to fit content */
     }
 
-    .best-sellers-nav {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 10px 0;
-        margin: 0 auto 20px;
-        width: 100%;
-        overflow-x: auto;
-        background-color: #F466AF;
-        position: sticky;
-        top: 0;
-        z-index: 10;
+    .banner-carousel #heroGlideSlides {
+        height: auto;
+        /* Auto height to fit content */
+        margin-top: 5%;
+        /* Adjust margin for better spacing */
     }
 
-    .best-sellers-nav nav {
-        display: flex;
-        gap: 2px;
+    .banner-carousel .glide__slide {
+        height: 300px;
+        /* Reduce slide height for mobile */
     }
 
-    .best-sellers-nav a {
-        text-decoration: none;
-        font-family: 'Work Sans';
-        font-weight: bold;
-        font-size: 16px;
-        padding: 10px 20px;
-        border-radius: 5px 5px 0 0;
-        background-color: #FFCBE4;
-        color: grey;
-        margin-right: -5px;
-        white-space: nowrap;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .best-sellers-nav a[href="#bbb"] {
-        background-color: #F466AF;
-        color: white;
-        position: relative;
-        z-index: 2;
-    }
-
-    .best-sellers-nav a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        color: white;
-    }
-
-    .products-1,
-    .products-2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .products-1 .product,
-    .products-2 .product {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        position: relative;
-        text-align: left;
-        padding: 10px;
-    }
-
-    .product img {
-        width: 100%;
-        height: 150px;
+    .banner-carousel #heroGlideSlides img {
+        height: 100%;
+        /* Ensure images fill the slide height */
         object-fit: cover;
-        border-radius: 10px 10px 0 0;
+        /* Maintain aspect ratio */
     }
 
-    .product h2 {
-        font-family: 'Work Sans';
-        font-weight: bold;
-        font-size: 16px;
-        margin: 10px 0 5px;
-        color: #333;
-        padding-left: 10px;
+    #heroGlide .glide__arrows {
+        height: auto;
+        /* Auto height for arrows */
     }
 
-    .product p {
-        font-family: 'Work Sans', sans-serif;
-        font-size: 12px;
-        color: #555;
-        margin: 0 0 10px;
-        padding-left: 10px;
+    .hero-banner .banner-carousel .glide__arrow--left {
+        left: 45%;
+        /* Position left arrow for mobile */
+        top: 103%;
+        /* Center vertically */
+        transform: translateY(-50%);
+        /* Center vertically */
     }
 
-    .product::before {
-        content: "New";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: #EC007A;
-        /* Pink badge color */
-        color: white;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-        z-index: 1;
+    .hero-banner .banner-carousel .glide__arrow--right {
+        left: 51% !important;
+        /* Position right arrow for mobile */
+        top: 103%;
+        /* Center vertically */
+        transform: translateY(-50%);
+        /* Center vertically */
     }
 }
 
 
+/* best sellers  */
+
+/* Media Query for Mobile Devices (max-width: 767px) */
+/* Media Query for Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+
+    .products-1,
+    .products-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr) !important;
+        gap: 15px;
+        width: 95% !important;
+        height: 500px !important;
+        background-color: #F466AF;
+        padding: 1%;
+        margin: 0 auto;
+    }
+
+    .best-sellers {
+        margin-bottom: 2%;
+        height: 1000px;
+    }
+
+    .best-sellers .productts-wrp {
+        width: 100% !important;
+        height: 1000px !important;
+        background-color: #F466AF !important;
+    }
+
+    /* .product {
+        flex: 1 1 calc(50% - 10px);
+    width: auto;
+    height: 100px;
+} */
+
+
+}
+
+/* pa mediaquery */
+
 .best-sellers {
     margin-bottom: 2%;
+    height: 1000px;
 }
 
 .best-sellers-nav {
@@ -379,26 +490,27 @@ ol {
 
 }
 
-.best-sellers-nav nav a[href="#aaa"] {
+.best-sellers-nav nav .aaa {
     border: 0;
     clip-path: polygon(100% 100%, .261% 100%, .261% 100%, .96% 99.87%, 1.541% 99.468%, 2.021% 98.778%, 2.414% 97.784%, 2.736% 96.469%, 3.002% 94.816%, 3.227% 92.809%, 3.427% 90.432%, 3.616% 87.668%, 3.81% 84.5%, 3.81% 84.5%, 3.978% 81.338%, 4.204% 76.678%, 4.478% 70.785%, 4.789% 63.924%, 5.127% 56.359%, 5.48% 48.356%, 5.839% 40.179%, 6.191% 32.092%, 6.527% 24.361%, 6.836% 17.25%, 6.836% 17.25%, 7.021% 14.367%, 7.324% 11.664%, 7.734% 9.169%, 8.241% 6.912%, 8.835% 4.922%, 9.504% 3.228%, 10.24% 1.86%, 11.031% .846%, 11.867% .216%, 12.738% 0%, 87.523% 0%, 87.523% 0%, 88.404% .216%, 89.246% .846%, 90.039% 1.86%, 90.776% 3.228%, 91.446% 4.922%, 92.039% 6.912%, 92.547% 9.169%, 92.96% 11.664%, 93.268% 14.367%, 93.463% 17.25%, 93.463% 17.25%, 93.761% 24.361%, 94.089% 32.092%, 94.435% 40.179%, 94.789% 48.356%, 95.139% 56.359%, 95.475% 63.924%, 95.785% 70.785%, 96.058% 76.678%, 96.284% 81.338%, 96.451% 84.5%, 96.451% 84.5%, 96.645% 87.668%, 96.835% 90.432%, 97.034% 92.809%, 97.259% 94.816%, 97.525% 96.469%, 97.847% 97.784%, 98.24% 98.778%, 98.72% 99.468%, 99.302% 99.87%, 100% 100%);
     background-color: #FFCBE4;
     color: grey;
 }
 
-.best-sellers-nav nav a[href="#bbb"] {
-    border: 0;
-    clip-path: polygon(100% 100%, .261% 100%, .261% 100%, .96% 99.87%, 1.541% 99.468%, 2.021% 98.778%, 2.414% 97.784%, 2.736% 96.469%, 3.002% 94.816%, 3.227% 92.809%, 3.427% 90.432%, 3.616% 87.668%, 3.81% 84.5%, 3.81% 84.5%, 3.978% 81.338%, 4.204% 76.678%, 4.478% 70.785%, 4.789% 63.924%, 5.127% 56.359%, 5.48% 48.356%, 5.839% 40.179%, 6.191% 32.092%, 6.527% 24.361%, 6.836% 17.25%, 6.836% 17.25%, 7.021% 14.367%, 7.324% 11.664%, 7.734% 9.169%, 8.241% 6.912%, 8.835% 4.922%, 9.504% 3.228%, 10.24% 1.86%, 11.031% .846%, 11.867% .216%, 12.738% 0%, 87.523% 0%, 87.523% 0%, 88.404% .216%, 89.246% .846%, 90.039% 1.86%, 90.776% 3.228%, 91.446% 4.922%, 92.039% 6.912%, 92.547% 9.169%, 92.96% 11.664%, 93.268% 14.367%, 93.463% 17.25%, 93.463% 17.25%, 93.761% 24.361%, 94.089% 32.092%, 94.435% 40.179%, 94.789% 48.356%, 95.139% 56.359%, 95.475% 63.924%, 95.785% 70.785%, 96.058% 76.678%, 96.284% 81.338%, 96.451% 84.5%, 96.451% 84.5%, 96.645% 87.668%, 96.835% 90.432%, 97.034% 92.809%, 97.259% 94.816%, 97.525% 96.469%, 97.847% 97.784%, 98.24% 98.778%, 98.72% 99.468%, 99.302% 99.87%, 100% 100%);
+
+
+.best-sellers-nav nav .aaa.active {
     background-color: #F466AF;
     color: white;
 }
+
 
 .best-sellers-nav nav {
     display: flex;
     gap: 20px;
 }
 
-.best-sellers-nav a {
+.best-sellers-nav button {
     text-decoration: none;
     font-family: 'Work Sans';
     font-weight: bold;
@@ -410,9 +522,9 @@ ol {
     transition: background-color 0.3s ease;
 }
 
-.best-sellers-nav a:hover {
+/* .best-sellers-nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
 .best-sellers-h1 {
     font-family: 'Work Sans';
@@ -429,23 +541,21 @@ ol {
 .products-2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+    gap: 15px;
+    width: 92%;
+    height: 280px;
     background-color: #F466AF;
+    padding: 1%;
+    margin: 0 auto;
 }
 
-.products-3,
-.products-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.best-sellers .productts-wrp {
     width: 100%;
-    max-width: 1519px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #40C8F4;
+    height: 700px !important;
+    background-color: #F466AF !important;
+    clip-path: polygon(100% 0%, 100% 79.725%, 100% 79.725%, 99.832% 83.999%, 99.377% 87.428%, 98.706% 90.104%, 97.892% 92.122%, 97.005% 93.573%, 96.119% 94.552%, 95.304% 95.151%, 94.633% 95.464%, 94.178% 95.583%, 94.01% 95.602%, 1.052% 100%, 0% 100%, 0% 0%, 100% 0%);
+    /* padding-top: 2%;
+        padding-bottom: 2%; */
 }
 
 .product {
@@ -520,7 +630,7 @@ ol {
     align-items: end;
 }
 
-.the-latest-nav a {
+.the-latest-nav button {
     text-decoration: none;
     font-family: 'Work Sans';
     font-weight: bold;
@@ -528,27 +638,53 @@ ol {
     padding: 10px 30px;
     border-radius: 5px;
     position: relative;
-    top: -9px;
+    top: -1%;
     transition: background-color 0.3s ease;
 }
 
-.the-latest-nav nav a[href="#aaa"] {
-    border: 0;
-    clip-path: polygon(100% 100%, .261% 100%, .261% 100%, .96% 99.87%, 1.541% 99.468%, 2.021% 98.778%, 2.414% 97.784%, 2.736% 96.469%, 3.002% 94.816%, 3.227% 92.809%, 3.427% 90.432%, 3.616% 87.668%, 3.81% 84.5%, 3.81% 84.5%, 3.978% 81.338%, 4.204% 76.678%, 4.478% 70.785%, 4.789% 63.924%, 5.127% 56.359%, 5.48% 48.356%, 5.839% 40.179%, 6.191% 32.092%, 6.527% 24.361%, 6.836% 17.25%, 6.836% 17.25%, 7.021% 14.367%, 7.324% 11.664%, 7.734% 9.169%, 8.241% 6.912%, 8.835% 4.922%, 9.504% 3.228%, 10.24% 1.86%, 11.031% .846%, 11.867% .216%, 12.738% 0%, 87.523% 0%, 87.523% 0%, 88.404% .216%, 89.246% .846%, 90.039% 1.86%, 90.776% 3.228%, 91.446% 4.922%, 92.039% 6.912%, 92.547% 9.169%, 92.96% 11.664%, 93.268% 14.367%, 93.463% 17.25%, 93.463% 17.25%, 93.761% 24.361%, 94.089% 32.092%, 94.435% 40.179%, 94.789% 48.356%, 95.139% 56.359%, 95.475% 63.924%, 95.785% 70.785%, 96.058% 76.678%, 96.284% 81.338%, 96.451% 84.5%, 96.451% 84.5%, 96.645% 87.668%, 96.835% 90.432%, 97.034% 92.809%, 97.259% 94.816%, 97.525% 96.469%, 97.847% 97.784%, 98.24% 98.778%, 98.72% 99.468%, 99.302% 99.87%, 100% 100%);
-    background-color: #40C8F4;
-    color: white;
-}
-
-.the-latest-nav nav a[href="#bbb"] {
+.the-latest-nav nav .aaa {
     border: 0;
     clip-path: polygon(100% 100%, .261% 100%, .261% 100%, .96% 99.87%, 1.541% 99.468%, 2.021% 98.778%, 2.414% 97.784%, 2.736% 96.469%, 3.002% 94.816%, 3.227% 92.809%, 3.427% 90.432%, 3.616% 87.668%, 3.81% 84.5%, 3.81% 84.5%, 3.978% 81.338%, 4.204% 76.678%, 4.478% 70.785%, 4.789% 63.924%, 5.127% 56.359%, 5.48% 48.356%, 5.839% 40.179%, 6.191% 32.092%, 6.527% 24.361%, 6.836% 17.25%, 6.836% 17.25%, 7.021% 14.367%, 7.324% 11.664%, 7.734% 9.169%, 8.241% 6.912%, 8.835% 4.922%, 9.504% 3.228%, 10.24% 1.86%, 11.031% .846%, 11.867% .216%, 12.738% 0%, 87.523% 0%, 87.523% 0%, 88.404% .216%, 89.246% .846%, 90.039% 1.86%, 90.776% 3.228%, 91.446% 4.922%, 92.039% 6.912%, 92.547% 9.169%, 92.96% 11.664%, 93.268% 14.367%, 93.463% 17.25%, 93.463% 17.25%, 93.761% 24.361%, 94.089% 32.092%, 94.435% 40.179%, 94.789% 48.356%, 95.139% 56.359%, 95.475% 63.924%, 95.785% 70.785%, 96.058% 76.678%, 96.284% 81.338%, 96.451% 84.5%, 96.451% 84.5%, 96.645% 87.668%, 96.835% 90.432%, 97.034% 92.809%, 97.259% 94.816%, 97.525% 96.469%, 97.847% 97.784%, 98.24% 98.778%, 98.72% 99.468%, 99.302% 99.87%, 100% 100%);
     background-color: #B3F6FF;
     color: grey;
 }
 
+.the-latest-nav nav .aaa.active {
+    background-color: #40C8F4;
+    color: white;
+}
+
+.products-3,
+.products-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 92%;
+    height: 280px;
+    background-color: #40C8F4;
+    padding: 1%;
+    margin: 0 auto;
+
+}
+
+.lastest-products {
+    width: 100%;
+    height: 700px !important;
+    background-color: #40C8F4 !important;
+    clip-path: polygon(100% 0%, 100% 79.725%, 100% 79.725%, 99.832% 83.999%, 99.377% 87.428%, 98.706% 90.104%, 97.892% 92.122%, 97.005% 93.573%, 96.119% 94.552%, 95.304% 95.151%, 94.633% 95.464%, 94.178% 95.583%, 94.01% 95.602%, 1.052% 100%, 0% 100%, 0% 0%, 100% 0%);
+    /* padding-top: 2%;
+        padding-bottom: 2%; */
+}
+
 
 /* Play for Free Section */
 
+
+@media (max-width: 767px) {
+    .play-for-free {
+        margin-top: 20%;
+    }
+}
 
 .play-for-free {
     align-items: center;
@@ -859,17 +995,18 @@ ol {
 
 
 .cosmic-wonder-img {
-    width: 40%;
+    width: 35%;
     height: 503px;
     border-radius: 5px;
-    padding-left: 20px;
+    padding-left: 5%;
 }
 
 .cosmic-wonder-description {
     height: 253px;
     width: 30%;
-
-
+    padding-right: 1%;
+    align-items: center;
+    margin-bottom: 4%;
 }
 
 .cosmic-wonder-description h2 {
@@ -877,12 +1014,18 @@ ol {
     font-size: 42px;
     font-weight: bold;
     color: black;
+    margin-left: 10%;
 }
 
 .cosmic-wonder-description p {
     font-family: 'Work Sans', sans-serif;
     font-size: 18px;
     color: grey;
+}
+
+.cosmic-wonder-description p:first-of-type {
+    margin-left: 22%;
+    padding-bottom: 2%;
 }
 
 .cosmic-wonder-description button {
@@ -897,6 +1040,7 @@ ol {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     transition: transform 0.6s ease;
+    margin-left: 25%;
 }
 
 .cosmic-wonder-description button:hover {
@@ -951,7 +1095,7 @@ ol {
     width: 100%;
     height: 509px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     background-image: url("assets/ftg.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -1067,10 +1211,10 @@ ol {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 528px;
+    height: 300px;
     gap: 20px;
     bottom: 20%;
-    margin-top: -7%;
+    margin-top: -3%;
 }
 
 
@@ -1195,7 +1339,6 @@ ol {
     top: 6%;
 }
 
-
 @keyframes waveMotion {
 
     0%,
@@ -1226,11 +1369,14 @@ ol {
 
 
 
+
+
 /* new products  */
 
 .new-products {
     height: 449px;
     width: 100%;
+    margin-bottom: 2%;
     background-image: url("assets/nwp1.jpg"), url("assets/nwp2.jpg");
     background-size: 100% contain, 100% contain;
     background-repeat: no-repeat, no-repeat;
@@ -1248,7 +1394,8 @@ ol {
     color: #40C8F4;
     text-align: center;
     width: 100%;
-    /* margin-bottom: 5%; */
+    /* padding-bottom: 5%; */
+    margin-top: 5%;
 }
 
 .new-products-1 {
@@ -1308,6 +1455,10 @@ ol {
     top: 25%;
     width: 100%;
     transform: translateY(-50%);
+    /* background-image: url("assets/button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom; */
 }
 
 .glide__arrow {
@@ -1318,6 +1469,11 @@ ol {
     cursor: pointer;
     font-size: 20px;
     border-radius: 50%;
+    /* background-image: url("assets/button.png");
+    background-size: 100% contain;
+    background-repeat: no-repeat;
+    background-position: center bottom; */
+
 }
 
 
@@ -1331,10 +1487,10 @@ ol {
     right: 5%;
 }
 
-.glide__arrow:hover {
+/* .glide__arrow:hover {
     background-color: white;
-    color: #EC007A;
-}
+    color: #F466AF;
+} */
 
 
 
@@ -1342,15 +1498,18 @@ ol {
 /* kids blog */
 .kids-blog {
     background-color: #F466AF;
-    padding: 20px;
-    height: 760px;
+    /* padding: 20px; */
+    height: 774px;
     width: 100%;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 20px;
     align-items: start;
     border-radius: 50px 0 50px 0;
-
+    background-image: url("assets/Rectangle\ 31.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 
 }
 
@@ -1373,7 +1532,7 @@ ol {
 
 .blog-images-grid {
     display: grid;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     max-height: 710px;
     overflow-y: scroll;
@@ -1483,6 +1642,7 @@ footer a {
 .footer-logo {
     height: 288px;
     width: 30%;
+    padding-left: 3%;
 }
 
 .footer-top img {
@@ -1511,6 +1671,7 @@ footer a {
     font-size: 15px;
     gap: 5%;
     overflow: hidden;
+    /* padding-left: 2%; */
 }
 
 .third-col {
@@ -1522,6 +1683,7 @@ footer a {
     font-size: 15px;
     gap: 5%;
     overflow: hidden;
+    margin-left: -7%;
 }
 
 
@@ -1530,7 +1692,7 @@ footer a {
     height: 270px;
     width: 30%;
     flex-direction: column;
-
+    margin-left: -6%;
 }
 
 
@@ -1583,7 +1745,6 @@ hr {
     justify-content: space-evenly;
     align-items: center;
     color: #FCF2EC;
-    padding-bottom: 7%;
     position: relative;
     gap: 55%;
 }
